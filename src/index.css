@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #030308;
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  letter-spacing: 0.025em;
+  line-height: 1.75;
+  overflow: hidden;
+  user-select: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Cinematic Font Families with generous spacing */
+.font-cinzel {
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+}
+
+.font-tech {
+  font-family: var(--font-mono);
+  letter-spacing: 0.18em;
+  line-height: 1.6;
+}
+
+.font-editorial {
+  font-family: var(--font-sans);
+  letter-spacing: 0.025em;
+  line-height: 1.85;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(10, 10, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Delicate Glows */
+.glow-text-subtle {
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+}
+
+.glow-heart {
+  text-shadow: 0 0 24px rgba(244, 63, 94, 0.6), 0 0 48px rgba(244, 63, 94, 0.3);
+}
+
+/* Shaking animation for 143 error */
+@keyframes cuteShake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20% { transform: translateX(-6px) rotate(-1.5deg); }
+  40% { transform: translateX(6px) rotate(1.5deg); }
+  60% { transform: translateX(-4px) rotate(-1deg); }
+  80% { transform: translateX(4px) rotate(1deg); }
+}
+
+.animate-cute-shake {
+  animation: cuteShake 0.45s ease-in-out;
+}
+
+/* Gentle pulse */
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.animate-heart-pulse {
+  animation: heartPulse 1.2s ease-in-out infinite;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
