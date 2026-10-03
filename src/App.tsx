@@ -21,10 +21,10 @@ import { UniverseEditorModal } from './components/UniverseEditorModal';
 // 3D Canvas
 import { UniverseCanvas } from './scenes/UniverseCanvas';
 
-const LOCAL_STORAGE_KEY = 'anniversary_universe_custom_config';
+const LOCAL_STORAGE_KEY = 'anniversary_universe_custom_config_v2';
 
 export const App: React.FC = () => {
-  // Load persistent custom config from localStorage if available
+  // Load optional browser-local edits; fresh browsers use the deployed final config
   const [config, setConfig] = useState<ExperienceConfig>(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
